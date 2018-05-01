@@ -58,7 +58,7 @@ var arreglosABjSon = JSON.parse( datos );
      },
   }
   
- },
+ };
  /*Creo un funcion ajax la cual me servira para traer los datos de los formularios*/
 function __ajax(url,data){
   var ajax = $.ajax({
