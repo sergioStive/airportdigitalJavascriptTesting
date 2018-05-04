@@ -115,7 +115,7 @@ NOTA ES LA MISMA PREGUNTA
 /*De igual manera la etiqueta <footer> no esta dentro de la etiqueta <section>*/
 
 ?>
-        </section><!—-end of body section-->
+        </section><!—end of body section- ->
         <footer>All rights reserved</footer>
     </body>
 </html>
