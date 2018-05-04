@@ -24,60 +24,60 @@ Please do not forget to document your code.
 
 /*Solucion al problema de los Arreglos*/
 (function(){
-/*Prueba empresa no es simulacro*/
 
-/*Primero creamos un odjeto para poder almacenar nuestros arreglos*/
+  /*Primero creamos un objeto para poder almacenar nuestros arreglos*/
 var formularioObjetos = {
-/*Creamos una funcion la cual nos va a servir para denominar a nuestra funcion ajax que creamos en la parte de 
-abajo esta tiene 2 parametros los cuales son la url: Es donde esta nuestro archivo PHP que nos trae los datos de 
+  /*Creamos una función la cual nos va a servir para denominar a nuestra función ajax que creamos en la parte de 
+abajo esta tiene 2 parámetros los cuales son la url: Es donde esta nuestro archivo PHP que nos trae los datos de 
 los dos formularios. En el archivo PHP lo que realizo es capturar los datos con $_POST los agrego en un array y los
-como la data esta esta como parametro en la funcion __ajax("url",data = Datos de los 2 formualrios)
+como la data esta esta como parámetro en la función __ajax("url",data = Datos de los 2 formularios)
  */
-                    /*Direccion del Archivo PHP donde capturo los datos*//*.done metodo de encadenamiento
-                    esta tiene una funcion la cual resive como parametro los datos de los parametros*/                                                                                            
+                    /*Dirección del Archivo PHP donde capturo los datos*//*.done() método de encadenamiento
+                    esta tiene una función la cual recibe como parámetro los datos de los parámetros*/
   funcionAjaxa:__ajax("Direcion/datos.php",data).done(function( datos )){
-/*Variable Json para decodificar la cadena Json con la funcion JSOM.parse por que lo se trae esta en cadena Json*/
+/*Variable Json para decodificar la cadena Json con la función JSON.parse por que lo se trae esta en cadena Json*/
 var arreglosABjSon = JSON.parse( datos );
   /*Realice un for para recorrer esta cadena que obtengo en los formularios*/
   for(var i in arreglosABjSon.data){
-  /*Realizo un odjeto de tipo de formulario A y B para que me almasene la propiedades de de los formuarios como 
+  /*Realizo un objeto de tipo de formulario A y B para que me almacene las propiedades de los formularios como 
   son el title el ans que contiene el id y el tipo. y el Multiple Selections que trae por defecto true o false y 
   allow_other_choice que traen true o false.
   */
+
   arreglosAB:{
   /**/
-  title: ${arreglosABjSon.data[i].titulo}  /*Aqui le doy como valor de la cadena Json el titulo*/
+  title: ${arreglosABjSon.data[i].titulo}    /*Aquí le doy como valor de la cadena Json el titulo*/
   
   ans:{
-   id: ${arreglosABjSon.data[i].id}, /*Aqui le doy como valor el id*/
-   type: ${arreglosABjSon.data[i].tipo} /*Aqui le doy como valor la cadena tipo Json el tipo*/
+   id: ${arreglosABjSon.data[i].id}, /*Aquí le doy como valor el id*/
+   type: ${arreglosABjSon.data[i].tipo} /*Aquí le doy como valor la cadena tipo Json el tipo*/
   },
   
-  allow_multiple_selections: ${arreglosABjSon.data[i].selectMultiple}, /*Aqui le doy como valor el selectMultiple*/
-  allow_other_choice: ${arreglosABjSon.data[i].selectChoice} /*Aqui le doy como valor el selectChoice*/
+  allow_multiple_selections: ${arreglosABjSon.data[i].selectMultiple}, /*Aquí le doy como valor el selectMultiple*/
+  allow_other_choice: ${arreglosABjSon.data[i].selectChoice} /*Aquí le doy como valor el selectChoice*/
      },
   }
   
  };
- /*Creo un funcion ajax la cual me servira para traer los datos de los formularios*/
+ /*Creo un función ajax la cual me servirá para traer los datos de los formularios*/
 function __ajax(url,data){
   var ajax = $.ajax({
     method:"GET",
     url: url,
     data: data
-  })/*Dejamos sin ; para adicionar la funcion .done()*/
+  })/*Dejamos sin ; para adicionar la función .done()*/
   return ajax;
   /*Retornamos la variable Ajax*/
 }
 
 };
-/*Llamamos a la funcion funcionAjaxa que esta dentro del Objeto formularioObjetos*/
+/*Llamamos a la función función Ajaxa que esta dentro del Objeto formularioObjetos*/
 formularioObjetos.funcionAjaxa();
 
 
 })();
 
-/*Fin de solucion de los problemas de arreglos*/
+/*Fin de la solución de los problemas de arreglos*/
 
 // Array Type A 
 const arrayTypeA = [
@@ -299,7 +299,7 @@ const outputObject = {
     ans: ''     // The answer of the field.
 }
 
-/*Odjetos en javaScript Utilizando jQuery*/
+/*Objetos en JavaScript Utilizando jQuery*/
 
 
 
